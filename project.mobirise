@@ -56,7 +56,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 40,
+    "uniqCompNum": 42,
     "versionPublish": "5.4.1",
     "screenshot": "screenshot.png",
     "chatbutton": {},
@@ -1066,7 +1066,7 @@
           },
           "_name": "image1",
           "_sourceTheme": "audiom4",
-          "_customHTML": "<section class=\"images1 audiom4_image1\" group=\"Images\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n\t<mbr-parameters>\n\t\t<!-- Block parameters controls (Blue \"Gear\" panel) -->\n\t\t<header>Size</header>\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"11\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"3\">\n\t\t<select title=\"Cards\" name=\"cardsAmount\">\n\t\t\t<option value=\"1\">1</option>\n\t\t\t<option value=\"2\">2</option>\n\t\t\t<option value=\"3\" selected>3</option>\n\t\t</select>\n\t\t<header>Show / Hide</header>\n\t\t<input type=\"checkbox\" title=\"Main Subtitle\" name=\"showSubTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Main Title\" name=\"showmainTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Date\" name=\"showText\">\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" name=\"bg\" parallax>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/audiom4/components/_images/background3.jpg\" parallax>\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n\t\t\t<input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n\t\t</fieldset>\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<!-- End block parameters -->\n\t</mbr-parameters>\n\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n\t<div class=\"container-fluid\">\n\t\t<div class=\"row mbr-white\">\n\t\t\t<div class=\"mbr-white col-md-12 col-lg-10\">\n\t\t\t\t<div class=\"title-align align-center\">\n\t\t\t\t\t<h3 class=\"mbr-section-subtitle mbr-semibold align-center mbr-light mbr-fonts-style\" data-app-selector=\".mbr-section-subtitle, .title-align\" mbr-theme-style=\"display-4\" mbr-if=\"showSubTitle\">\n\t\t\t\t\t\tLastest\n\t\t\t\t\t</h3>\n\t\t\t\t</div>\n\t\t\t\t<h1 class=\"mbr-section-title align-center mbr-bold pb-5 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showmainTitle\">PHOTO GALLERY\n\t\t\t\t</h1>\n\t\t\t</div>\n\n\t\t\t<div class=\"card item features-image col-12 col-md-6 active\" mbr-if=\"cardsAmount > 1\" mbr-class=\"{'col-lg-3': cardsAmount == '4',\n                             'col-lg-4': cardsAmount == '3'}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/51079061-322651721697857-6229740343613456384-o-924x614.jpg\" alt=\"Mobirise\" data-slide-to=\"0\" data-bs-slide-to=\"0\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"card-box pt-4\" mbr-if=\"showTitle || showText\">\n\t\t\t\t\t\t<h4 class=\"card-title align-left mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-img\">Studio</h4>\n\t\t\t\t\t\t<p class=\"mbr-text align-left mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .link\">\n\t\t\t\t\t\t\t2026\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div><div class=\"card item features-image col-12 col-md-6\" mbr-class=\"{'col-lg-3': cardsAmount == '4',\n                             'col-lg-4': cardsAmount == '3'}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/fr-934x1401.jpg\" alt=\"Mobirise\" data-slide-to=\"1\" data-bs-slide-to=\"1\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"card-box pt-4\" mbr-if=\"showTitle || showText\">\n\t\t\t\t\t\t<h4 class=\"card-title align-left mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-img\">\n\t\t\t\t\t\t\tLifestyle</h4>\n\t\t\t\t\t\t<p class=\"mbr-text align-left mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .link\">\n\t\t\t\t\t\t\t2027\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"card item features-image col-12 col-md-6\" mbr-if=\"cardsAmount > 2\" mbr-class=\"{'col-lg-3': cardsAmount == '4',\n                             'col-lg-4': cardsAmount == '3'}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/65-924x924.jpg\" alt=\"Mobirise\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"card-box pt-4\" mbr-if=\"showTitle || showText\">\n\t\t\t\t\t\t<h4 class=\"card-title align-left mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-img\">\n\t\t\t\t\t\t\tProduct</h4>\n\t\t\t\t\t\t<p class=\"mbr-text align-left mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .link\">\n\t\t\t\t\t\t\t2025\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>",
+          "_customHTML": "<section class=\"images1 audiom4_image1\" group=\"Images\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n\t<mbr-parameters>\n\t\t<!-- Block parameters controls (Blue \"Gear\" panel) -->\n\t\t<header>Size</header>\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"11\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"3\">\n\t\t<select title=\"Cards\" name=\"cardsAmount\">\n\t\t\t<option value=\"1\">1</option>\n\t\t\t<option value=\"2\">2</option>\n\t\t\t<option value=\"3\" selected>3</option>\n\t\t</select>\n\t\t<header>Show / Hide</header>\n\t\t<input type=\"checkbox\" title=\"Main Subtitle\" name=\"showSubTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Main Title\" name=\"showmainTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Date\" name=\"showText\">\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" name=\"bg\" parallax>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/audiom4/components/_images/background3.jpg\" parallax>\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n\t\t\t<input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n\t\t</fieldset>\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<!-- End block parameters -->\n\t</mbr-parameters>\n\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n\t<div class=\"container-fluid\">\n\t\t<div class=\"row mbr-white\">\n\t\t\t<div class=\"mbr-white col-md-12 col-lg-10\">\n\t\t\t\t<div class=\"title-align align-center\">\n\t\t\t\t\t<h3 class=\"mbr-section-subtitle mbr-semibold align-center mbr-light mbr-fonts-style\" data-app-selector=\".mbr-section-subtitle, .title-align\" mbr-theme-style=\"display-4\" mbr-if=\"showSubTitle\">\n\t\t\t\t\t\tLastest\n\t\t\t\t\t</h3>\n\t\t\t\t</div>\n\t\t\t\t<h1 class=\"mbr-section-title align-center mbr-bold pb-5 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showmainTitle\">PHOTO GALLERY\n\t\t\t\t</h1>\n\t\t\t</div>\n\n\t\t\t<div class=\"card item features-image col-12 col-md-6 active\" mbr-if=\"cardsAmount > 1\" mbr-class=\"{'col-lg-3': cardsAmount == '4',\n                             'col-lg-4': cardsAmount == '3'}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/51079061-322651721697857-6229740343613456384-o-924x614.jpg\" alt=\"Mobirise\" data-slide-to=\"0\" data-bs-slide-to=\"0\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"card-box pt-4\" mbr-if=\"showTitle || showText\">\n\t\t\t\t\t\t<h4 class=\"card-title align-left mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-img\">Studio</h4>\n\t\t\t\t\t\t<p class=\"mbr-text align-left mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .link\">\n\t\t\t\t\t\t\t2026\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div><div class=\"card item features-image col-12 col-md-6\" mbr-class=\"{'col-lg-3': cardsAmount == '4',\n                             'col-lg-4': cardsAmount == '3'}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/fr-934x1401.jpg\" alt=\"Mobirise\" data-slide-to=\"1\" data-bs-slide-to=\"1\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"card-box pt-4\" mbr-if=\"showTitle || showText\">\n\t\t\t\t\t\t<h4 class=\"card-title align-left mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-img\">\n\t\t\t\t\t\t\tLifestyle</h4>\n\t\t\t\t\t\t<p class=\"mbr-text align-left mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .link\">\n\t\t\t\t\t\t\t2027\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"card item features-image col-12 col-md-6\" mbr-if=\"cardsAmount > 2\" mbr-class=\"{'col-lg-3': cardsAmount == '4',\n                             'col-lg-4': cardsAmount == '3'}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/16-938x938.jpg\" alt=\"Mobirise\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"card-box pt-4\" mbr-if=\"showTitle || showText\">\n\t\t\t\t\t\t<h4 class=\"card-title align-left mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-img\">\n\t\t\t\t\t\t\tProduct</h4>\n\t\t\t\t\t\t<p class=\"mbr-text align-left mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .link\">\n\t\t\t\t\t\t\t2025\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>",
           "_cid": "sLukNXrv5d",
           "_anchor": "image1-d",
           "_protectedParams": [],
@@ -1224,7 +1224,7 @@
           },
           "_name": "contact2",
           "_sourceTheme": "designerportfoliom4",
-          "_customHTML": "<section class=\"contact2\" group=\"Contact\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background19.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#9a0712\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row content-wrapper justify-content-center\">    \n            <div class=\"col-lg-3 offset-lg-1\">              \n                <div class=\"col-lg-12 col-md-12 col-sm-12 left-side\">                   \n                    <h3 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title\" data-app-placeholder=\"Type Text\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>Contact</b></h3>\n                    <p class=\"mbr-fonts-style description\" mbr-theme-style=\"display-4\" data-app-selector=\".description\" mbr-if=\"showSubtitle\">Feel free to contact me for any inquiry below I will get back to you as soon as possible. Also provide information on what kind of project you're interested on executing.</p>\n                    <p class=\"mbr-fonts-style contacts-name\" mbr-theme-style=\"display-4\" data-app-selector=\".contacts-name\">EMAIL:</p>\n                    <p class=\"mbr-fonts-style contacts-info\" mbr-theme-style=\"display-4\" data-app-selector=\".contacts-info\">landryamos@thehitfilms.com</p>\n                    <p class=\"mbr-fonts-style contacts-name\" mbr-theme-style=\"display-4\" data-app-selector=\".contacts-name\">PHONE:</p>\n                    <p class=\"mbr-fonts-style contacts-info margin\" mbr-theme-style=\"display-4\" data-app-selector=\".contacts-info\">+1 347 280 540</p>\n                    <div mbr-buttons=\"true\" mbr-theme-style=\"display-4\" data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" class=\"col-12 col-md-auto mbr-section-btn\"><a type=\"submit\" class=\"btn gray-button\" data-app-placeholder=\"Type Text\"><span class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                        Instagram</a></div>\n                </div>\n            </div>\n\n            <div class=\"col-lg-7 offset-lg-1 col-12\">                \n                <form mbr-form action=\"landryamos@thehitfilms.com\" name=\"Form Name\" method=\"POST\" class=\"mbr-form form-with-styler\">                                \n                    <div class=\"form-row\">\n                        <div hidden=\"hidden\" data-form-alert class=\"alert alert-success col-12\">Thanks for filling out the form!</div>\n                        <div hidden=\"hidden\" data-form-alert-danger class=\"alert alert-danger col-12\">Oops...! some problem!</div>\n                    </div>\n\n                    <div class=\"dragArea form-row\">\n                        <div class=\"col-lg-12 col-md-12 col-sm-12 form-heading\">\n                            <h2 class=\"title mbr-section-title\" data-app-selector=\".title\" mbr-theme-style=\"display-5\" data-app-placeholder=\"Type Text\"><b>I am always looking for great collaborators. Message me now and let's make <a href=\"index.html\" class=\"text-primary\">something together!</a></b></h2>\n                        </div>\n\n                        <div class=\"col-lg-6 col-md-12 col-sm-12 form-group\" data-for=\"name\">\n                            <label mbr-text mbr-theme-style=\"display-4\" for=\"name\" class=\"form-control-label mbr-fonts-style\">Your name (required)</label>\n                            <input type=\"text\" name=\"name\" placeholder=\"Name\" data-form-field=\"name\" mbr-theme-style=\"display-7\" required=\"required\" class=\"form-control\" value>\n                        </div>\n                        <div data-for=\"email\" class=\"col-lg-6 col-md-12 col-sm-12 form-group\">\n                            <label mbr-text mbr-theme-style=\"display-4\" for=\"email\" class=\"form-control-label mbr-fonts-style\">Your email (required)</label>\n                            <input type=\"email\" name=\"email\" placeholder=\"Email\" data-form-field=\"email\" mbr-theme-style=\"display-7\" class=\"form-control\" required=\"required\" value>\n                        </div>\n                        <div data-for=\"phone\" class=\"col-lg-6 col-md-12 col-sm-12 form-group\">\n                            <label mbr-text mbr-theme-style=\"display-4\" for=\"phone\" class=\"form-control-label mbr-fonts-style\">Phone Number</label>\n                            <input type=\"tel\" name=\"phone\" placeholder=\"Phone\" data-form-field=\"phone\" mbr-theme-style=\"display-7\" class=\"form-control\" value>\n                        </div>\n                        <div data-for=\"number\" class=\"col-lg-6 col-md-12 col-sm-12 form-group\">\n                            <label mbr-text mbr-theme-style=\"display-4\" for=\"number\" class=\"form-control-label mbr-fonts-style\">Choose a Budget (USD)</label>\n                            <input type=\"text\" name=\"number\" placeholder=\"What's Your Budget\" data-form-field=\"number\" mbr-theme-style=\"display-7\" class=\"form-control\" value>\n                        </div>\n                        <div data-for=\"message\" class=\"col-lg-12 col-md-12 col-sm-12 form-group\" style>\n                            <label mbr-text mbr-theme-style=\"display-4\" for=\"message\" class=\"form-control-label mbr-fonts-style\">Your message</label>\n                            <textarea name=\"message\" placeholder=\"Tell me about your project\" data-form-field=\"message\" mbr-theme-style=\"display-7\" class=\"form-control\"></textarea>\n                        </div>\n                        <div class=\"col-auto\" style mbr-buttons=\"true\" mbr-theme-style=\"display-4\" data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\">\n                            <a data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" type=\"submit\" class=\"btn btn-primary\">Contact Me</a>\n                        </div>\n                    </div>\n                </form>\n            </div>\n        </div>                \n    </div>\n</section>",
+          "_customHTML": "<section class=\"contact2\" group=\"Contact\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background19.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#9a0712\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row content-wrapper justify-content-center\">    \n            <div class=\"col-lg-3 offset-lg-1\">              \n                <div class=\"col-lg-12 col-md-12 col-sm-12 left-side\">                   \n                    <h3 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title\" data-app-placeholder=\"Type Text\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>Contact</b></h3>\n                    <p class=\"mbr-fonts-style description\" mbr-theme-style=\"display-4\" data-app-selector=\".description\" mbr-if=\"showSubtitle\">Feel free to contact me for any inquiry below I will get back to you as soon as possible. Also provide information on what kind of project you're interested on executing.</p>\n                    <p class=\"mbr-fonts-style contacts-name\" mbr-theme-style=\"display-4\" data-app-selector=\".contacts-name\">EMAIL:</p>\n                    <p class=\"mbr-fonts-style contacts-info\" mbr-theme-style=\"display-4\" data-app-selector=\".contacts-info\">thehitfilms@gmail.com</p>\n                    <p class=\"mbr-fonts-style contacts-name\" mbr-theme-style=\"display-4\" data-app-selector=\".contacts-name\">PHONE:</p>\n                    <p class=\"mbr-fonts-style contacts-info margin\" mbr-theme-style=\"display-4\" data-app-selector=\".contacts-info\">+1 347 280 540</p>\n                    <div mbr-buttons=\"true\" mbr-theme-style=\"display-4\" data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" class=\"col-12 col-md-auto mbr-section-btn\"><a type=\"submit\" class=\"btn gray-button\" data-app-placeholder=\"Type Text\"><span class=\"mdi-action-room mbr-iconfont mbr-iconfont-btn\"></span>\n                        New York</a></div>\n                </div>\n            </div>\n\n            <div class=\"col-lg-7 offset-lg-1 col-12\">                \n                <form mbr-form action=\"thehitfilms@gmail.com\" name=\"Form Name\" method=\"POST\" class=\"mbr-form form-with-styler\">                                \n                    <div class=\"form-row\">\n                        <div hidden=\"hidden\" data-form-alert class=\"alert alert-success col-12\">Thanks for filling out the form!</div>\n                        <div hidden=\"hidden\" data-form-alert-danger class=\"alert alert-danger col-12\">Oops...! some problem!</div>\n                    </div>\n\n                    <div class=\"dragArea form-row\">\n                        <div class=\"col-lg-12 col-md-12 col-sm-12 form-heading\">\n                            <h2 class=\"title mbr-section-title\" data-app-selector=\".title\" mbr-theme-style=\"display-5\" data-app-placeholder=\"Type Text\"><b>I am always looking for great collaborators. Message me now and let's make <a href=\"index.html\" class=\"text-primary\">something together!</a></b></h2>\n                        </div>\n\n                        <div class=\"col-lg-6 col-md-12 col-sm-12 form-group\" data-for=\"name\">\n                            <label mbr-text mbr-theme-style=\"display-4\" for=\"name\" class=\"form-control-label mbr-fonts-style\">Your name (required)</label>\n                            <input type=\"text\" name=\"name\" placeholder=\"Name\" data-form-field=\"name\" mbr-theme-style=\"display-7\" required=\"required\" class=\"form-control\" value>\n                        </div>\n                        <div data-for=\"email\" class=\"col-lg-6 col-md-12 col-sm-12 form-group\">\n                            <label mbr-text mbr-theme-style=\"display-4\" for=\"email\" class=\"form-control-label mbr-fonts-style\">Your email (required)</label>\n                            <input type=\"email\" name=\"email\" placeholder=\"Email\" data-form-field=\"email\" mbr-theme-style=\"display-7\" class=\"form-control\" required=\"required\" value>\n                        </div>\n                        <div data-for=\"phone\" class=\"col-lg-6 col-md-12 col-sm-12 form-group\">\n                            <label mbr-text mbr-theme-style=\"display-4\" for=\"phone\" class=\"form-control-label mbr-fonts-style\">Phone Number</label>\n                            <input type=\"tel\" name=\"phone\" placeholder=\"Phone\" data-form-field=\"phone\" mbr-theme-style=\"display-7\" class=\"form-control\" value>\n                        </div>\n                        <div data-for=\"number\" class=\"col-lg-6 col-md-12 col-sm-12 form-group\">\n                            <label mbr-text mbr-theme-style=\"display-4\" for=\"number\" class=\"form-control-label mbr-fonts-style\">Choose a Budget (USD)</label>\n                            <input type=\"text\" name=\"number\" placeholder=\"What's Your Budget\" data-form-field=\"number\" mbr-theme-style=\"display-7\" class=\"form-control\" value>\n                        </div>\n                        <div data-for=\"message\" class=\"col-lg-12 col-md-12 col-sm-12 form-group\" style>\n                            <label mbr-text mbr-theme-style=\"display-4\" for=\"message\" class=\"form-control-label mbr-fonts-style\">Your message</label>\n                            <textarea name=\"message\" placeholder=\"Tell me about your project\" data-form-field=\"message\" mbr-theme-style=\"display-7\" class=\"form-control\"></textarea>\n                        </div>\n                        <div class=\"col-auto\" style mbr-buttons=\"true\" mbr-theme-style=\"display-4\" data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\">\n                            <a data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" type=\"submit\" class=\"btn btn-primary\">Contact Me</a>\n                        </div>\n                    </div>\n                </form>\n            </div>\n        </div>                \n    </div>\n</section>",
           "_anchor": "contact2-8",
           "_isUserblock": true,
           "_cid": "ssGlcxMZeN",
@@ -1325,6 +1325,599 @@
         "order": 1
       },
       "components": [
+        {
+          "_name": "gallery02",
+          "_sourceTheme": "dinerm4",
+          "_customHTML": "<section class=\"mbr-gallery mbr-slider-carousel gallery02 dinerm4_gallery02\" group=\"Gallery\" plugins=\"Masonry,BootstrapCarouselSwipe,Gallery,VimeoPlayer,SliderVideo\">\n\n\t<mbr-parameters>\n\t\t<!-- Block parameters controls (Blue \"Gear\" panel) -->\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\t\t<input type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"2\" inline>\n\t\t<input type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"2\" inline>\n\t\t<input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n\t\t<input type=\"checkbox\" title=\"Show Main Subtitle\" name=\"showSubTitle\">\n\t\t<input type=\"checkbox\" title=\"Show Main Title\" name=\"showmainTitle\" checked>\n\n\t\t<input type=\"gallery\" title=\"Gallery\" name=\"gallery\">\n\t\t<!-- End block parameters -->\n\t</mbr-parameters>\n\n\t<div class=\"title\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-12 pb-2 col-lg-12 align-center\">\n\t\t\t\t<h2 class=\"mbr-section-subtitle mbr-exbold mbr-light mbr-fonts-style\" mbr-if=\"showSubTitle\" mbr-theme-style=\"display-5\">Menu</h2>\n\t\t\t\t<h1 class=\"mbr-section-title pb-3 mbr-exbold mbr-fonts-style\" mbr-if=\"showmainTitle\" mbr-theme-style=\"display-5\"><b>Photo Gallery</b></h1>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\t<div mbr-class=\"{'container': !fullWidth}\">\n\t\t<div mbr-gallery=\"gallery\" mbr-gallery-spacing=\"1\"></div>\n\t</div>\n</section>",
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            "overflow": "hidden",
+            "box-sizing": "border-box",
+            ".mbr-slider .carousel-control": {
+              "background": "#1b1b1b"
+            },
+            ".mbr-slider .carousel-control-prev": {
+              "left": "0",
+              "margin-left": "2.5rem"
+            },
+            ".mbr-slider .carousel-control-next": {
+              "right": "0",
+              "margin-right": "2.5rem"
+            },
+            ".title": {
+              "padding": "0 2rem"
+            },
+            ".container": {
+              "padding": "0 1rem"
+            },
+            ".mbr-gallery-item div": {
+              "border-radius": "6px",
+              "overflow": "hidden",
+              "margin": "auto",
+              "position": "relative",
+              "z-index": "10",
+              "max-width": "400px",
+              "img": {
+                "object-fit": "cover",
+                "height": "100%"
+              },
+              "&:before": {
+                "content": "''",
+                "width": "100%",
+                "height": "100%",
+                "position": "absolute",
+                "left": "50%",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+                "background": "lightgray",
+                "transition": "all 0.6s",
+                "opacity": "0",
+                "z-index": "9"
+              },
+              "&:after": {
+                "content": "''",
+                "width": "0",
+                "height": "0",
+                "position": "absolute",
+                "left": "50%",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+                "background": "lightgray",
+                "transition": "all 0.6s",
+                "opacity": "0",
+                "z-index": "9"
+              },
+              "&:hover": {
+                "&:before": {
+                  "opacity": "0.5",
+                  "width": "0",
+                  "height": "0"
+                },
+                "&:after": {
+                  "opacity": "0",
+                  "height": "100%",
+                  "width": "100%"
+                }
+              }
+            },
+            ".mbr-gallery-filter": {
+              "padding-top": "0px",
+              "padding-bottom": "0px"
+            },
+            ".mbr-slider .modal-body .close": {
+              "background": "#1b1b1b"
+            },
+            ".icon-focus": {
+              "display": "none"
+            },
+            ".btn-primary-outline": {
+              "border": "none !important",
+              "color": "gray !important",
+              "padding": "1rem 1rem",
+              "position": "relative",
+              "background": "transparent !important",
+              "font-weight": "400",
+              "&:hover": {
+                "background": "transparent !important",
+                "color": "@primaryColor !important"
+              }
+            },
+            "li.active .btn": {
+              "background": "transparent !important",
+              "color": "black !important"
+            },
+            "li": {
+              "position": "relative"
+            },
+            ".mbr-gallery-filter ul li:not(:last-child):after": {
+              "content": "''",
+              "position": "absolute",
+              "height": "24px",
+              "width": "1px",
+              "right": "0px",
+              "top": "26px",
+              "background": "lightgray",
+              "transform": "rotate(35deg)"
+            },
+            ".btn": {
+              "font-family": "@mainFont !important"
+            },
+            ".mbr-gallery-title": {
+              "font-size": "0.9em",
+              "position": "absolute",
+              "display": "flex",
+              "width": "100%",
+              "bottom": "0",
+              "height": "100%",
+              "padding": "2rem",
+              "color": "#fff",
+              "z-index": "2",
+              "justify-content": "center",
+              "align-items": "flex-end",
+              "transition": "all 0.3s",
+              "opacity": "0",
+              "&:hover": {
+                "opacity": "1"
+              }
+            },
+            "@media (max-width: 767px)": {
+              "li:not(:last-child):after": {
+                "top": "9px"
+              },
+              ".btn-primary-outline": {
+                "padding": "0rem 1rem",
+                "margin": "0 !important"
+              },
+              ".container": {
+                "padding": "0rem 0.5rem"
+              },
+              ".title": {
+                "padding": "0 1rem"
+              }
+            },
+            "H2": {
+              "color": "#89b758"
+            },
+            "H1": {
+              "color": "#3f424e"
+            }
+          },
+          "_cid": "sMARD251eT",
+          "_anchor": "gallery02-15",
+          "_protectedParams": [
+            "text_all",
+            "gallery__filtersTextStyle",
+            "gallery__filtersBtnStyle",
+            "gallery"
+          ],
+          "_global": false,
+          "_once": false,
+          "_params": {
+            "text_all": "All",
+            "gallery__filtersTextStyle": "display-7",
+            "gallery__filtersBtnStyle": "btn-primary-outline",
+            "gallery": [
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/dsc-1239-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc-1239-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": true
+              },
+              {
+                "tags": "Responsive",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/p1120809-2000x2367.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/p1120809-2000x2367-800x947.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Creative",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/q-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/q-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Animated",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/1-copy-3-copy-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/1-copy-3-copy-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/dsc-53-2000x1792.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc-53-2000x1792-800x717.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/p1080322-2000x2664.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/p1080322-2000x2664-800x1066.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Responsive",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp8-2000x2823.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp8-2000x2823-800x1129.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Animated",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp24-2000x2664.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp24-2000x2664-800x1066.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp2-2000x1410.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp2-2000x1410-800x564.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp20-2000x2920.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp20-2000x2920-800x1168.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp17-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp17-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp12-2000x2785.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp12-2000x2785-800x1114.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp3-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp3-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/1-copy-2-2000x1333.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/1-copy-2-2000x1333-800x533.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/nh-copy-2000x2663.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/nh-copy-2000x2663-800x1065.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/123-2000x2000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/123-2000x2000-800x800.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/3-copy-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/3-copy-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/5-2000x2500.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/5-2000x2500-800x1000.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/51079061-322651721697857-6229740343613456384-o-1080x718.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/51079061-322651721697857-6229740343613456384-o-1080x718-800x532.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/dsc-163-2000x1333.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc-163-2000x1333-800x533.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/moi-pp-2000x2588.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/moi-pp-2000x2588-800x1035.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/r-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/r-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp13-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp13-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/tree-2000x2000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/tree-2000x2000-800x800.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/dsc-1758-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc-1758-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/12-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/12-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/1-copy-2-2000x1333.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/1-copy-2-2000x1333-800x533.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/23-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/23-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/16-2000x2000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/16-2000x2000-800x800.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/22-2000x2000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/22-2000x2000-800x800.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp4-2000x2000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp4-2000x2000-800x800.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/67-2000x2000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/67-2000x2000-800x800.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              }
+            ]
+          }
+        },
         {
           "alias": false,
           "_styles": {
@@ -1742,557 +2335,6 @@
           "_params": {}
         },
         {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "overflow": "hidden",
-            "box-sizing": "border-box",
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            ".mbr-section-subtitle": {
-              "color": "#767676"
-            },
-            ".mbr-slider .carousel-control": {
-              "background": "#1b1b1b"
-            },
-            ".mbr-slider .carousel-control-prev": {
-              "left": "0",
-              "margin-left": "2.5rem"
-            },
-            ".mbr-slider .carousel-control-next": {
-              "right": "0",
-              "margin-right": "2.5rem"
-            },
-            ".mbr-slider .modal-body .close": {
-              "background": "#1b1b1b"
-            },
-            ".mbr-gallery-item > div::before": {
-              "content": "''",
-              "position": "absolute",
-              "left": "0",
-              "top": "0",
-              "width": "100%",
-              "height": "100%",
-              "background-color": "@overlayColor1",
-              "opacity": "0",
-              "-webkit-transition": "0.2s opacity ease-in-out",
-              "transition": "0.2s opacity ease-in-out",
-              "& when (@gradientOverlay)": {
-                "background": "linear-gradient(180deg, @overlayColor1, @overlayColor2)"
-              }
-            },
-            ".icon-focus": {
-              "font-size": "2rem !important",
-              "width": "50px",
-              "height": "50px",
-              "top": "~\"calc(50% - 25px)\"",
-              "left": "~\"calc(50% - 25px)\"",
-              "&:before": {
-                "content": "'+'",
-                "border-radius": "100px",
-                "background": "#444444",
-                "width": "100%",
-                "height": "100%",
-                "padding-bottom": "6px",
-                "display": "flex",
-                "-webkit-align-items": "center",
-                "align-items": "center",
-                "-webkit-justify-content": "center",
-                "justify-content": "center"
-              }
-            },
-            ".icon-video": {
-              "font-size": "1.5rem !important",
-              "width": "50px",
-              "height": "50px",
-              "top": "~\"calc(50% - 25px)\"",
-              "left": "~\"calc(50% - 25px)\"",
-              "&:before": {
-                "border-radius": "100px",
-                "background": "#444444",
-                "width": "100%",
-                "height": "100%",
-                "padding-left": "6px",
-                "display": "flex",
-                "-webkit-align-items": "center",
-                "align-items": "center",
-                "-webkit-justify-content": "center",
-                "justify-content": "center"
-              }
-            },
-            ".mbr-gallery-title": {
-              "transition": "all 0.5s ease",
-              "position": "absolute",
-              "text-align": "left",
-              "display": "none",
-              "width": "100%",
-              "bottom": "0",
-              "right": "0",
-              "padding": "1rem",
-              "color": "#ffffff",
-              "font-weight": "bold",
-              "background": "transparent",
-              "-webkit-transition": "all 0.5s ease",
-              "-moz-transition": "all 0.5s ease",
-              "-o-transition": "all 0.5s ease",
-              "-ms-transition": "all 0.5s ease"
-            },
-            "ul": {
-              "font-size": "0"
-            },
-            ".mbr-gallery-filter ul": {
-              "text-align": "left"
-            },
-            ".mbr-gallery-filter ul li .btn": {
-              "border": "none !important",
-              "background-color": "transparent",
-              "color": "@tagsColor !important",
-              "padding": "0.5rem 1rem 0.6rem",
-              "border-radius": "0",
-              "margin": "0!important",
-              "transition": "padding, border 0s, transform .2s"
-            },
-            ".mbr-gallery-filter ul li.active .btn": {
-              "padding": "0.5rem 1rem 0.5rem",
-              "border-radius": "0 !important"
-            },
-            ".mbr-gallery-filter ul li": {
-              "padding": "0",
-              "margin": "0 .2rem",
-              "&:first-child, &:last-child": {
-                "margin": "0"
-              }
-            },
-            ".mbr-gallery-item > div:hover": {
-              ".mbr-gallery-title": {
-                "display": "block"
-              },
-              "&:before": {
-                "opacity": "@overlayOpacityItem !important"
-              }
-            },
-            ".btn": {
-              "background": "none !important",
-              "border-radius": "0 !important",
-              "box-shadow": "none !important",
-              "&.active": {
-                "&:after": {
-                  "animation": "none"
-                }
-              },
-              "&:active": {
-                "box-shadow": "none !important"
-              },
-              "&:hover": {
-                "background": "transparent !important",
-                "&:before": {
-                  "background": "transparent !important"
-                }
-              },
-              "&:before": {
-                "background-color": "transparent !important"
-              },
-              "&:focus": {
-                "box-shadow": "none !important"
-              }
-            },
-            ".mbr-section-title,.mbr-gallery-filter ul": {
-              "color": "#232323",
-              "text-align": "left"
-            }
-          },
-          "_name": "gallery1",
-          "_sourceTheme": "commercem4",
-          "_customHTML": "<section class=\"mbr-gallery mbr-slider-carousel\" group=\"Sliders & Gallery\" plugins=\"Masonry,Slider,BootstrapCarouselSwipe,Gallery,VimeoVideo\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Width Gallery\" name=\"fullWidth\" checked>\n        <input type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"3\" inline>\n        <input type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" inline>\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"color\" title=\"Items Overlay Color 1\" name=\"overlayColor1\" value=\"#59585d\">\n        <input type=\"checkbox\" title=\"Items Gradient Overlay\" name=\"gradientOverlay\">\n        <input type=\"color\" title=\"Items Overlay Color 2\" name=\"overlayColor2\" value=\"#ca4336\" condition=\"gradientOverlay\">\n        <input type=\"range\" title=\"Items Overlay Opacity\" name=\"overlayOpacityItem\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0\" inline>\n        <input type=\"color\" title=\"Tags Color\" name=\"tagsColor\" value=\"#59585d\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"gallery\" title=\"Gallery\" name=\"gallery\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <h3 class=\"mbr-section-subtitle mbr-fonts-style pb-2\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">Lorem Ipsum Dolor Sit Amet</h3>\n        <h2 class=\"align-left mbr-fonts-style mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title,.mbr-gallery-filter ul\" mbr-class=\"{'pb-4':!gallery__filter}\"><b>Photo Gallery</b></h2>\n    </div> \n\n    <div mbr-class=\"{'container': !fullWidth}\">\n        <div class=\"col-left-gallery\" mbr-gallery=\"gallery\" mbr-gallery-spacing=\"1\"></div>\n    </div>\n</section>",
-          "_anchor": "gallery1-12",
-          "_isUserblock": true,
-          "_cid": "sLFDDR2Dxt",
-          "_protectedParams": [
-            "text_all",
-            "gallery__filtersTextStyle",
-            "gallery__filtersBtnStyle",
-            "gallery"
-          ],
-          "_global": false,
-          "_once": false,
-          "_params": {
-            "text_all": "All",
-            "gallery__filtersTextStyle": "display-7",
-            "gallery__filtersBtnStyle": "btn-primary-outline",
-            "gallery": [
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/51079061-322651721697857-6229740343613456384-o-1080x718.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/51079061-322651721697857-6229740343613456384-o-1080x718-800x532.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/yes-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/yes-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp24-2000x2664.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp24-2000x2664-800x1066.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/dsc-163-2000x1333.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/dsc-163-2000x1333-800x533.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/3-copy-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/3-copy-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp22-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp22-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/p1120809-2000x2367.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/p1120809-2000x2367-800x947.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/moi-pp-2000x2588.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/moi-pp-2000x2588-800x1035.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/dsc-53-2000x1792.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/dsc-53-2000x1792-800x717.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp13-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp13-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/dsc-1758-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/dsc-1758-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/dsc-893-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/dsc-893-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/r-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/r-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/a-1638x2048.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/a-1638x2048-800x1000.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/123.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/123-800x800.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/5-2000x2500.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/5-2000x2500-800x1000.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Responsive",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/dsc-1572-recovered-1500x2250.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/dsc-1572-recovered-1500x2250-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/ouhhh-2000x2664.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/ouhhh-2000x2664-800x1066.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/dsc-1239-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/dsc-1239-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": true
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pour-elle-2000x1692.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pour-elle-2000x1692-800x677.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/b-1639x2048.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/b-1639x2048-800x1000.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/ver-2000x2500.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/ver-2000x2500-800x1000.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp2-2000x1410.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp2-2000x1410-800x564.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp8-2000x2823.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp8-2000x2823-800x1129.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp20-2000x2920.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp20-2000x2920-800x1168.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp17-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp17-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/c-1638x2048.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/c-1638x2048-800x1000.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Responsive",
-                "videoPreview": "@ADDONS_PATH@/commercem4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/new-pp-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/new-pp-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              }
-            ]
-          }
-        },
-        {
           "_name": "info1",
           "_sourceTheme": "mobirise5",
           "_styles": {
@@ -2310,7 +2352,7 @@
               "color": "#ffffff"
             }
           },
-          "_customHTML": "<section group=\"Features\" class=\"info1\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked=\"\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" title=\"Image\" value=\"\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected=\"\">\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#4479d9\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"align-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg-8\">\n                <h3 class=\"mbr-section-title mb-4 mbr-fonts-style\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n                    <b>Join our community on Mobirise Forums.</b>\n                </h3>\n                <p class=\"mbr-text mb-5 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                    Mobirise is a free offline app for Windows and Mac to easily create small/medium websites, landing pages, online resumes and portfolios. 3100+ beautiful website blocks, templates and themes help you to start easily.\n                </p>\n                <div mbr-buttons=\"\" mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-secondary\" href=\"index.html#contact2-8\" data-app-placeholder=\"Type Text\"><span class=\"mdi-social-whatshot mbr-iconfont mbr-iconfont-btn\"></span>WORK WITH ME&nbsp;</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section group=\"Features\" class=\"info1\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value>\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#4479d9\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"align-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg-8\">\n                <h3 class=\"mbr-section-title mb-4 mbr-fonts-style\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n                    <b>Join our community on Mobirise Forums.</b>\n                </h3>\n                <p class=\"mbr-text mb-5 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                    Mobirise is a free offline app for Windows and Mac to easily create small/medium websites, landing pages, online resumes and portfolios. 3100+ beautiful website blocks, templates and themes help you to start easily.\n                </p>\n                <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-secondary\" href=\"index.html#contact2-8\" data-app-placeholder=\"Type Text\"><span class=\"mdi-social-whatshot mbr-iconfont mbr-iconfont-btn\"></span>WORK WITH ME&nbsp;</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_anchor": "info1-13",
           "_isUserblock": true,
           "_cid": "sLFXK0zNur",
