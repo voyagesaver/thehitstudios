@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "index.html",
+    "currentPage": "galleryphoto.html",
     "theme": {
       "name": "skillm4",
       "title": "SkillM4",
@@ -56,7 +56,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 42,
+    "uniqCompNum": 47,
     "versionPublish": "5.4.1",
     "screenshot": "screenshot.png",
     "chatbutton": {},
@@ -1326,15 +1326,18 @@
       },
       "components": [
         {
-          "_name": "gallery02",
-          "_sourceTheme": "dinerm4",
-          "_customHTML": "<section class=\"mbr-gallery mbr-slider-carousel gallery02 dinerm4_gallery02\" group=\"Gallery\" plugins=\"Masonry,BootstrapCarouselSwipe,Gallery,VimeoPlayer,SliderVideo\">\n\n\t<mbr-parameters>\n\t\t<!-- Block parameters controls (Blue \"Gear\" panel) -->\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\t\t<input type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"2\" inline>\n\t\t<input type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"2\" inline>\n\t\t<input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n\t\t<input type=\"checkbox\" title=\"Show Main Subtitle\" name=\"showSubTitle\">\n\t\t<input type=\"checkbox\" title=\"Show Main Title\" name=\"showmainTitle\" checked>\n\n\t\t<input type=\"gallery\" title=\"Gallery\" name=\"gallery\">\n\t\t<!-- End block parameters -->\n\t</mbr-parameters>\n\n\t<div class=\"title\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-12 pb-2 col-lg-12 align-center\">\n\t\t\t\t<h2 class=\"mbr-section-subtitle mbr-exbold mbr-light mbr-fonts-style\" mbr-if=\"showSubTitle\" mbr-theme-style=\"display-5\">Menu</h2>\n\t\t\t\t<h1 class=\"mbr-section-title pb-3 mbr-exbold mbr-fonts-style\" mbr-if=\"showmainTitle\" mbr-theme-style=\"display-5\"><b>Photo Gallery</b></h1>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\t<div mbr-class=\"{'container': !fullWidth}\">\n\t\t<div mbr-gallery=\"gallery\" mbr-gallery-spacing=\"1\"></div>\n\t</div>\n</section>",
+          "alias": false,
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
             "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
             "overflow": "hidden",
             "box-sizing": "border-box",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
             ".mbr-slider .carousel-control": {
               "background": "#1b1b1b"
             },
@@ -1346,146 +1349,108 @@
               "right": "0",
               "margin-right": "2.5rem"
             },
-            ".title": {
-              "padding": "0 2rem"
-            },
-            ".container": {
-              "padding": "0 1rem"
-            },
-            ".mbr-gallery-item div": {
-              "border-radius": "6px",
-              "overflow": "hidden",
-              "margin": "auto",
-              "position": "relative",
-              "z-index": "10",
-              "max-width": "400px",
-              "img": {
-                "object-fit": "cover",
-                "height": "100%"
-              },
-              "&:before": {
-                "content": "''",
-                "width": "100%",
-                "height": "100%",
-                "position": "absolute",
-                "left": "50%",
-                "top": "50%",
-                "transform": "translate(-50%, -50%)",
-                "background": "lightgray",
-                "transition": "all 0.6s",
-                "opacity": "0",
-                "z-index": "9"
-              },
-              "&:after": {
-                "content": "''",
-                "width": "0",
-                "height": "0",
-                "position": "absolute",
-                "left": "50%",
-                "top": "50%",
-                "transform": "translate(-50%, -50%)",
-                "background": "lightgray",
-                "transition": "all 0.6s",
-                "opacity": "0",
-                "z-index": "9"
-              },
-              "&:hover": {
-                "&:before": {
-                  "opacity": "0.5",
-                  "width": "0",
-                  "height": "0"
-                },
-                "&:after": {
-                  "opacity": "0",
-                  "height": "100%",
-                  "width": "100%"
-                }
-              }
-            },
-            ".mbr-gallery-filter": {
-              "padding-top": "0px",
-              "padding-bottom": "0px"
-            },
             ".mbr-slider .modal-body .close": {
               "background": "#1b1b1b"
+            },
+            ".mbr-gallery-item > div::before": {
+              "content": "''",
+              "position": "absolute",
+              "left": "0",
+              "top": "0",
+              "width": "100%",
+              "height": "100%",
+              "background-color": "@overlayColor1",
+              "opacity": "0",
+              "-webkit-transition": "0.2s opacity ease-in-out",
+              "transition": "0.2s opacity ease-in-out",
+              "& when (@gradientOverlay)": {
+                "background": "linear-gradient(180deg, @overlayColor1, @overlayColor2)"
+              }
             },
             ".icon-focus": {
               "display": "none"
             },
-            ".btn-primary-outline": {
-              "border": "none !important",
-              "color": "gray !important",
-              "padding": "1rem 1rem",
-              "position": "relative",
-              "background": "transparent !important",
-              "font-weight": "400",
-              "&:hover": {
-                "background": "transparent !important",
-                "color": "@primaryColor !important"
-              }
+            ".mbr-gallery-title": {
+              "transition": "all 0.5s ease",
+              "position": "absolute",
+              "text-align": "left",
+              "display": "none",
+              "width": "100%",
+              "top": "0",
+              "right": "0",
+              "padding": "1rem",
+              "color": "#000000",
+              "font-weight": "bold",
+              "background": "transparent",
+              "-webkit-transition": "all 0.5s ease",
+              "-moz-transition": "all 0.5s ease",
+              "-o-transition": "all 0.5s ease",
+              "-ms-transition": "all 0.5s ease"
             },
-            "li.active .btn": {
-              "background": "transparent !important",
-              "color": "black !important"
+            "ul": {
+              "font-size": "0"
             },
-            "li": {
+            ".mbr-gallery-filter ul li .btn": {
+              "border": "none",
+              "background-color": "transparent",
+              "color": "@tagsColor !important",
+              "padding": "0.5rem 1rem 0.6rem",
+              "border-radius": "0",
+              "margin": "0 !important",
+              "transition": "padding, border 0s, transform 0.2s"
+            },
+            ".mbr-gallery-filter ul li.active .btn": {
+              "padding": "0.5rem 1rem 0.5rem",
+              "border-radius": "0 !important",
               "position": "relative"
             },
-            ".mbr-gallery-filter ul li:not(:last-child):after": {
+            ".mbr-gallery-filter ul li.active .btn:after": {
               "content": "''",
               "position": "absolute",
-              "height": "24px",
-              "width": "1px",
-              "right": "0px",
-              "top": "26px",
-              "background": "lightgray",
-              "transform": "rotate(35deg)"
+              "bottom": "0",
+              "left": "0",
+              "width": "100%",
+              "height": "3px",
+              "background": "linear-gradient(90deg, @primaryColor, @secondaryColor)"
+            },
+            ".mbr-gallery-filter ul li": {
+              "padding": "0"
+            },
+            ".mbr-gallery-item > div:hover": {
+              ".mbr-gallery-title": {
+                "padding-bottom": "1.5rem",
+                "display": "block"
+              },
+              "&:before": {
+                "opacity": "@overlayOpacityItem !important"
+              }
             },
             ".btn": {
-              "font-family": "@mainFont !important"
-            },
-            ".mbr-gallery-title": {
-              "font-size": "0.9em",
-              "position": "absolute",
-              "display": "flex",
-              "width": "100%",
-              "bottom": "0",
-              "height": "100%",
-              "padding": "2rem",
-              "color": "#fff",
-              "z-index": "2",
-              "justify-content": "center",
-              "align-items": "flex-end",
-              "transition": "all 0.3s",
-              "opacity": "0",
+              "background": "none",
+              "border-radius": "0 !important",
               "&:hover": {
-                "opacity": "1"
+                "background": "transparent !important",
+                "&:before": {
+                  "background": "transparent !important"
+                }
+              },
+              "&:before": {
+                "background-color": "transparent !important"
+              },
+              "&:focus": {
+                "box-shadow": "none"
               }
             },
-            "@media (max-width: 767px)": {
-              "li:not(:last-child):after": {
-                "top": "9px"
-              },
-              ".btn-primary-outline": {
-                "padding": "0rem 1rem",
-                "margin": "0 !important"
-              },
-              ".container": {
-                "padding": "0rem 0.5rem"
-              },
-              ".title": {
-                "padding": "0 1rem"
-              }
-            },
-            "H2": {
-              "color": "#89b758"
-            },
-            "H1": {
+            ".mbr-section-title": {
+              "position": "relative",
+              "z-index": "1",
               "color": "#3f424e"
             }
           },
-          "_cid": "sMARD251eT",
-          "_anchor": "gallery02-15",
+          "_name": "gallery1",
+          "_sourceTheme": "restaurantm4",
+          "_customHTML": "<section class=\"gallery1 restaurantm4_gallery1 mbr-gallery mbr-slider-carousel\" group=\"Sliders & Galleries\" plugins=\"Masonry,Slider,BootstrapCarouselSwipe,Gallery,VimeoVideo\">\n\n\t<mbr-parameters>\n\t\t<!-- Block parameters controls (Blue \"Gear\" panel) -->\n\t\t<input type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"3\" inline>\n\t\t<input type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" inline>\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n\t\t<input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n\t\t<input type=\"color\" title=\"Overlay Color 1\" name=\"overlayColor1\" value=\"#ffffff\">\n\t\t<input type=\"checkbox\" title=\"Gradient Overlay\" name=\"gradientOverlay\">\n\t\t<input type=\"color\" title=\"Overlay Color 2\" name=\"overlayColor2\" value=\"#f9e2af\" condition=\"gradientOverlay\">\n\t\t<input type=\"range\" title=\"Overlay Opacity\" name=\"overlayOpacityItem\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0\" inline>\n\t\t<input type=\"color\" title=\"Tags Color\" name=\"tagsColor\" value=\"#232323\">\n\t\t<fieldset type=\"background\" name=\"bg\" parallax>\n\t\t\t<input type=\"image\" title=\"Background Image\" value=\"@ADDONS_PATH@/restaurantm4/components/_images/background1.jpg\" parallax>\n\t\t\t<input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n\t\t</fieldset>\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<input type=\"gallery\" title=\"Gallery\" name=\"gallery\">\n\t\t<!-- End block parameters -->\n\t</mbr-parameters>\n\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n\t</div>\n\n\t<div mbr-class=\"{'container': !fullWidth}\">\n\t\t<div class=\"row justify-content-center\" mbr-if=\"showTitle\">\n\t\t\t<div mbr-class=\"{'col-sm-12': !fullWidth, 'col-sm-10': fullWidth}\">\n\t\t\t\t<h2 class=\"align-center mbr-fonts-style mbr-section-title\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-title\"><b>Photo Gallery</b></h2>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-left-gallery\" mbr-gallery=\"gallery\" mbr-gallery-spacing=\"1\"></div>\n\t</div>\n</section>",
+          "_cid": "sMZ2LNMrCf",
           "_protectedParams": [
             "text_all",
             "gallery__filtersTextStyle",
@@ -1501,11 +1466,11 @@
             "gallery": [
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/dsc-1239-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/dsc-1239-2000x3000-800x1200.jpg",
+                "image": "@PROJECT_PATH@/assets/images/p1120809-2000x2367-800x947.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/p1120809-2000x2367-800x947-800x947.jpg",
                 "alt": "",
                 "title": "",
                 "customStyle1": "display-7",
@@ -1514,33 +1479,7 @@
               },
               {
                 "tags": "Responsive",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/p1120809-2000x2367.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/p1120809-2000x2367-800x947.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Creative",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/q-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/q-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
                 "image": "@PROJECT_PATH@/assets/images/1-copy-3-copy-2000x3000.jpg",
@@ -1552,38 +1491,12 @@
                 "active": false
               },
               {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "tags": "Creative",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/dsc-53-2000x1792.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/dsc-53-2000x1792-800x717.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/p1080322-2000x2664.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/p1080322-2000x2664-800x1066.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Responsive",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp8-2000x2823.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp8-2000x2823-800x1129.jpg",
+                "image": "@PROJECT_PATH@/assets/images/dsc-1239-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc-1239-2000x3000-800x1200.jpg",
                 "alt": "",
                 "title": "",
                 "customStyle1": "display-7",
@@ -1592,33 +1505,7 @@
               },
               {
                 "tags": "Animated",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp24-2000x2664.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp24-2000x2664-800x1066.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp2-2000x1410.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp2-2000x1410-800x564.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
                 "image": "@PROJECT_PATH@/assets/images/pp20-2000x2920.jpg",
@@ -1631,11 +1518,11 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp17-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp17-2000x3000-800x1200.jpg",
+                "image": "@PROJECT_PATH@/assets/images/q-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/q-2000x3000-800x1200.jpg",
                 "alt": "",
                 "title": "",
                 "customStyle1": "display-7",
@@ -1644,33 +1531,7 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp12-2000x2785.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp12-2000x2785-800x1114.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/pp3-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/pp3-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
                 "image": "@PROJECT_PATH@/assets/images/1-copy-2-2000x1333.jpg",
@@ -1682,12 +1543,25 @@
                 "active": false
               },
               {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "tags": "Responsive",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/nh-copy-2000x2663.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/nh-copy-2000x2663-800x1065.jpg",
+                "image": "@PROJECT_PATH@/assets/images/pp2-2000x1410.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp2-2000x1410-800x564.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Animated",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/p1080322-2000x2664.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/p1080322-2000x2664-800x1066.jpg",
                 "alt": "",
                 "title": "",
                 "customStyle1": "display-7",
@@ -1696,46 +1570,7 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/123-2000x2000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/123-2000x2000-800x800.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/3-copy-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/3-copy-2000x3000-800x1200.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/5-2000x2500.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/5-2000x2500-800x1000.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
                 "image": "@PROJECT_PATH@/assets/images/51079061-322651721697857-6229740343613456384-o-1080x718.jpg",
@@ -1748,7 +1583,33 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp8-2000x2823.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp8-2000x2823-800x1129.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp24-2000x2664.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp24-2000x2664-800x1066.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
                 "image": "@PROJECT_PATH@/assets/images/dsc-163-2000x1333.jpg",
@@ -1761,11 +1622,11 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/moi-pp-2000x2588.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/moi-pp-2000x2588-800x1035.jpg",
+                "image": "@PROJECT_PATH@/assets/images/dsc-1758-2000x3000-800x1200.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc-1758-2000x3000-800x1200-800x1200.jpg",
                 "alt": "",
                 "title": "",
                 "customStyle1": "display-7",
@@ -1774,11 +1635,11 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/r-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/r-2000x3000-800x1200.jpg",
+                "image": "@PROJECT_PATH@/assets/images/dsc00270-2000x2667.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc00270-2000x2667-800x1067.jpg",
                 "alt": "",
                 "title": "",
                 "customStyle1": "display-7",
@@ -1787,7 +1648,33 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/pp3-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp3-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/3-copy-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/3-copy-2000x3000-800x1200.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
                 "image": "@PROJECT_PATH@/assets/images/pp13-2000x3000.jpg",
@@ -1800,11 +1687,11 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/tree-2000x2000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/tree-2000x2000-800x800.jpg",
+                "image": "@PROJECT_PATH@/assets/images/r-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/r-2000x3000-800x1200.jpg",
                 "alt": "",
                 "title": "",
                 "customStyle1": "display-7",
@@ -1813,11 +1700,11 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/dsc-1758-2000x3000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/dsc-1758-2000x3000-800x1200.jpg",
+                "image": "@PROJECT_PATH@/assets/images/5-2000x2500.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/5-2000x2500-800x1000.jpg",
                 "alt": "",
                 "title": "",
                 "customStyle1": "display-7",
@@ -1826,7 +1713,20 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/dsc01513-1-2000x2667.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc01513-1-2000x2667-800x1067.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
                 "image": "@PROJECT_PATH@/assets/images/12-2000x3000.jpg",
@@ -1839,20 +1739,7 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/1-copy-2-2000x1333.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/1-copy-2-2000x1333-800x533.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
                 "image": "@PROJECT_PATH@/assets/images/23-2000x3000.jpg",
@@ -1865,11 +1752,11 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/16-2000x2000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/16-2000x2000-800x800.jpg",
+                "image": "@PROJECT_PATH@/assets/images/pp17-2000x3000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp17-2000x3000-800x1200.jpg",
                 "alt": "",
                 "title": "",
                 "customStyle1": "display-7",
@@ -1878,11 +1765,11 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/22-2000x2000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/22-2000x2000-800x800.jpg",
+                "image": "@PROJECT_PATH@/assets/images/pp12-2000x2785.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/pp12-2000x2785-800x1114.jpg",
                 "alt": "",
                 "title": "",
                 "customStyle1": "display-7",
@@ -1891,7 +1778,111 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/123-2000x2000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/123-2000x2000-800x800.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/dsc-53-2000x1792.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc-53-2000x1792-800x717.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/dsc00330-2000x2000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc00330-2000x2000-800x800.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/dsc09864-2000x2667.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc09864-2000x2667-800x1067.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/nh-copy-2000x2663.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/nh-copy-2000x2663-800x1065.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/dsc00390-2000x2667.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc00390-2000x2667-800x1067.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/moi-pp-2000x2588.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/moi-pp-2000x2588-800x1035.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/dsc-62-2000x2667.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/dsc-62-2000x2667-800x1067.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
                 "image": "@PROJECT_PATH@/assets/images/pp4-2000x2000.jpg",
@@ -1904,11 +1895,37 @@
               },
               {
                 "tags": "Awesome",
-                "videoPreview": "@ADDONS_PATH@/dinerm4/components/_images/gallery/preview.jpg",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/67-2000x2000.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/67-2000x2000-800x800.jpg",
+                "image": "@PROJECT_PATH@/assets/images/16-2000x2000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/16-2000x2000-800x800.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/22-2000x2000.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/22-2000x2000-800x800.jpg",
+                "alt": "",
+                "title": "",
+                "customStyle1": "display-7",
+                "caption": "Type caption here",
+                "active": false
+              },
+              {
+                "tags": "Awesome",
+                "videoPreview": "@ADDONS_PATH@/restaurantm4/components/_images/gallery/preview.jpg",
+                "playVideo": false,
+                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
+                "image": "@PROJECT_PATH@/assets/images/65-924x924.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/65-924x924-800x800.jpg",
                 "alt": "",
                 "title": "",
                 "customStyle1": "display-7",
@@ -1916,7 +1933,8 @@
                 "active": false
               }
             ]
-          }
+          },
+          "_anchor": "gallery1-1a"
         },
         {
           "alias": false,
